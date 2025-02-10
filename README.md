@@ -6,6 +6,7 @@
 This Java project solves the following exercise:
 
 "Create a class with a method that throws an ArrayIndexOutOfBoundsException.
+
 Verify its correct running with a jUnit test".
 
 The goal is to understand **exception handling** in Java and learn how to **test exceptions using JUnit**.
