@@ -1,5 +1,5 @@
 
-# 1.4. Testing (Level 1 - Exercise 2)
+# 1.4. Testing (Level 1 - Exercise 3)
 
 ## Project Description 📄
 
