@@ -1,9 +1,11 @@
 package org.example;
 
 public class Numbers {
-    public static int[] numbers = {10, 20, 30, 40, 50};
-
-    public static int getNumberByPos(int i) {
-        return numbers[i];
+    public int getElementAtIndex(int[] array, int index) throws ArrayIndexOutOfBoundsException{
+        if (index < 0 || index >= array.length){
+            throw new ArrayIndexOutOfBoundsException("Index out of bounds");
+        }
+        return array[index];
     }
 }
+
