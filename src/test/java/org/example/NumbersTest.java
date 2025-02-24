@@ -6,19 +6,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NumbersTest {
 
     @Test
-    void testGetNumberByPosValidIndex() {
-        assertEquals(20, Numbers.getNumberByPos(1), "Number in position 1 should be 20.");
-    }
+    public void testGetElementAtIndex_ThrowsArrayIndexOutOfBoundsException() {
+        Numbers arrayNumbers = new Numbers();
+        int[] array = {1, 2, 3, 4, 5};
 
-    @Test
-    void testGetNumberInvalidPos () {
-        boolean exceptionThrown = false;
+        ArrayIndexOutOfBoundsException exception = assertThrows(ArrayIndexOutOfBoundsException
+                .class, () -> {
+            arrayNumbers.getElementAtIndex(array, 10);
+        });
 
-        try {
-            Numbers.getNumberByPos(10);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            exceptionThrown = true;
-        }
-        assertTrue(exceptionThrown, "Expected ArrayIndexOutOfBoundsException to be thrown.");
+        System.out.println("Exception message: " +  exception.getMessage());
+
+        assertEquals("Index out of bounds", exception.getMessage());
+
+        assertDoesNotThrow(() -> {
+            int value = arrayNumbers.getElementAtIndex(array, 2);
+            assertEquals(3, value);
+        });
     }
 }
